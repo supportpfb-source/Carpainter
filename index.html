@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ur" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sattar Wood Works — Kitchen &amp; Home Decoration Carpenter, Karachi</title>
+<title>ستار وڈ ورکس — کچن اور ہوم ڈیکوریشن کارپینٹر، کراچی</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&family=Noto+Nastaliq+Urdu:wght@400..700&family=Noto+Sans+Urdu:wght@400..700&display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 <style>
@@ -25,14 +25,29 @@
   body{
     background:var(--cream);
     color:var(--walnut);
+    font-family:'Noto Sans Urdu','Work Sans',sans-serif;
+    line-height:2;
+    direction:rtl;
+    text-align:right;
+  }
+  body.lang-en{
     font-family:'Work Sans',sans-serif;
     line-height:1.65;
+    direction:ltr;
+    text-align:left;
   }
   h1,h2,h3,h4,h5{
-    font-family:'Fraunces',serif;
+    font-family:'Noto Nastaliq Urdu',serif;
     font-weight:600;
     color:var(--walnut);
+    line-height:2.3;
   }
+  body.lang-en h1, body.lang-en h2, body.lang-en h3, body.lang-en h4, body.lang-en h5{
+    font-family:'Fraunces',serif;
+    line-height:1.15;
+  }
+  .navbar-brand, .footer-logo, .dev-name{font-family:'Noto Nastaliq Urdu',serif;}
+  body.lang-en .navbar-brand, body.lang-en .footer-logo, body.lang-en .dev-name{font-family:'Fraunces',serif;}
   a{color:inherit;}
   .text-muted-warm{color:var(--text-muted)!important;}
   .bg-cream2{background:var(--cream-2);}
@@ -45,6 +60,17 @@
   .section-kicker{font-size:.9rem;color:var(--copper-deep);font-weight:600;letter-spacing:.3px;}
   .rounded-2{border-radius:4px;}
 
+  /* ===== Lang switch button ===== */
+  .lang-switch{
+    display:inline-flex;border:1px solid var(--walnut);border-radius:20px;overflow:hidden;
+  }
+  .lang-switch button{
+    border:none;background:transparent;color:var(--walnut);
+    padding:.32rem .85rem;font-size:.8rem;font-weight:600;cursor:pointer;
+    font-family:'Work Sans',sans-serif;
+  }
+  .lang-switch button.active{background:var(--walnut);color:var(--cream);}
+
   /* ===== Template top notice ===== */
   .notice-bar{
     background:var(--walnut);color:var(--cream);
@@ -53,29 +79,33 @@
   .notice-bar a{color:#E8B98C;text-decoration:underline;}
 
   /* ===== Navbar ===== */
-  .navbar-brand{
-    font-family:'Fraunces',serif;font-weight:700;font-size:1.35rem;line-height:1.1;color:var(--walnut)!important;
-  }
-  .navbar-brand small{display:block;font-family:'Work Sans',sans-serif;font-size:.62rem;font-weight:500;color:var(--text-muted);letter-spacing:.4px;}
+  .navbar-brand{font-weight:700;font-size:1.4rem;line-height:1.3;color:var(--walnut)!important;}
+  .navbar-brand small{display:block;font-family:'Noto Sans Urdu','Work Sans',sans-serif;font-size:.68rem;font-weight:500;color:var(--text-muted);letter-spacing:.2px;}
+  body.lang-en .navbar-brand small{font-family:'Work Sans',sans-serif;font-size:.62rem;}
   .navbar{background:rgba(245,240,230,.94)!important;backdrop-filter:blur(6px);border-bottom:1px solid var(--line);}
   .nav-link{color:var(--walnut-soft)!important;font-weight:500;}
   .nav-link:hover{color:var(--copper)!important;}
 
   /* ===== Hero ===== */
   .hero{padding:5.5rem 0 5rem;}
-  .hero h1{font-size:3rem;letter-spacing:-.5px;}
-  .hero .lead{color:var(--text-muted);max-width:46ch;}
+  .hero h1{font-size:2.6rem;}
+  body.lang-en .hero h1{font-size:3rem;letter-spacing:-.5px;}
+  .hero .lead{color:var(--text-muted);max-width:50ch;}
   .hero-img-wrap{position:relative;}
-  .hero-img-wrap img{height:480px;object-fit:cover;border-radius:4px;}
+  .hero-img-wrap img{height:480px;object-fit:cover;border-radius:4px;width:100%;}
   .float-card{
-    position:absolute;left:-16px;bottom:-20px;max-width:230px;
+    position:absolute;left:-16px;bottom:-20px;max-width:250px;
     background:var(--walnut);color:var(--cream);padding:1.1rem 1.3rem;
     box-shadow:0 18px 40px rgba(36,24,18,.28);border-radius:3px;
   }
-  .float-card b{color:#E8B98C;font-family:'Fraunces',serif;font-size:.95rem;display:block;margin-bottom:2px;}
-  .float-card span{font-size:.78rem;color:#D8CDBF;}
-  .stat b{font-family:'Fraunces',serif;font-size:1.6rem;color:var(--copper-deep);display:block;}
-  .stat span{font-size:.78rem;color:var(--text-muted);}
+  body.lang-en .float-card{left:-16px;right:auto;}
+  html[dir="rtl"] .float-card{left:auto;right:-16px;}
+  .float-card b{color:#E8B98C;font-family:'Noto Nastaliq Urdu',serif;font-size:1.05rem;display:block;margin-bottom:2px;}
+  body.lang-en .float-card b{font-family:'Fraunces',serif;font-size:.95rem;}
+  .float-card span{font-size:.82rem;color:#D8CDBF;}
+  .stat b{font-family:'Noto Nastaliq Urdu',serif;font-size:1.7rem;color:var(--copper-deep);display:block;}
+  body.lang-en .stat b{font-family:'Fraunces',serif;font-size:1.6rem;}
+  .stat span{font-size:.8rem;color:var(--text-muted);}
 
   /* ===== Service cards ===== */
   .service-card{
@@ -86,7 +116,7 @@
   .service-card .icon{font-size:1.5rem;color:var(--copper);margin-bottom:1rem;}
 
   /* ===== Portfolio ===== */
-  .project-card{border-radius:4px;overflow:hidden;position:relative;height:100%;}
+  .project-card{border-radius:4px;overflow:hidden;position:relative;height:100%;cursor:pointer;}
   .project-card img{width:100%;height:100%;object-fit:cover;min-height:260px;transition:transform .5s ease;}
   .project-card:hover img{transform:scale(1.06);}
   .project-card .overlay{
@@ -94,27 +124,47 @@
     background:linear-gradient(to top, rgba(36,24,18,.9), rgba(36,24,18,0));
     color:#fff;
   }
-  .project-card .overlay b{font-family:'Fraunces',serif;font-size:1.02rem;display:block;}
-  .project-card .overlay span{font-size:.78rem;color:#E4D9C8;}
-  .badge-cat{
+  .project-card .overlay b{font-family:'Noto Nastaliq Urdu',serif;font-size:1.15rem;display:block;}
+  body.lang-en .project-card .overlay b{font-family:'Fraunces',serif;font-size:1.02rem;}
+  .project-card .overlay span{font-size:.8rem;color:#E4D9C8;}
+  .project-card .zoom-hint{
     position:absolute;top:14px;left:14px;
+    width:34px;height:34px;border-radius:50%;
     background:rgba(245,240,230,.92);color:var(--walnut);
-    font-size:.7rem;font-weight:600;padding:.3rem .65rem;border-radius:20px;
+    display:flex;align-items:center;justify-content:center;font-size:1rem;
   }
+  html[dir="rtl"] .project-card .zoom-hint{left:auto;right:14px;}
+  .badge-cat{
+    position:absolute;top:14px;right:14px;
+    background:rgba(245,240,230,.92);color:var(--walnut);
+    font-size:.72rem;font-weight:600;padding:.3rem .65rem;border-radius:20px;
+  }
+  html[dir="rtl"] .badge-cat{right:auto;left:14px;}
+
+  /* Lightbox modal */
+  #imageModal .modal-content{background:var(--walnut);border:none;border-radius:6px;}
+  #imageModal .modal-header{border-bottom:1px solid rgba(245,240,230,.15);}
+  #imageModal .modal-title{color:var(--cream);font-family:'Noto Nastaliq Urdu',serif;font-size:1.3rem;}
+  body.lang-en #imageModal .modal-title{font-family:'Fraunces',serif;}
+  #imageModal .modal-body{padding:0;}
+  #imageModal img{width:100%;max-height:70vh;object-fit:cover;}
+  #imageModal .modal-footer{border-top:1px solid rgba(245,240,230,.15);color:#D8CDBF;font-size:.9rem;}
+  #imageModal .btn-close{filter:invert(1) grayscale(100%) brightness(200%);}
 
   /* ===== Process ===== */
-  .process-num{font-family:'Fraunces',serif;font-size:2.1rem;color:var(--copper);}
+  .process-num{font-family:'Noto Nastaliq Urdu',serif;font-size:2.3rem;color:var(--copper);}
+  body.lang-en .process-num{font-family:'Fraunces',serif;font-size:2.1rem;}
 
   /* ===== Areas ===== */
   .area-pill{
-    border:1px solid var(--line);padding:.5rem 1.1rem;font-size:.88rem;border-radius:20px;
+    border:1px solid var(--line);padding:.5rem 1.1rem;font-size:.9rem;border-radius:20px;
     color:var(--walnut-soft);background:var(--cream);display:inline-block;
   }
   .area-pill.on{background:var(--walnut);color:var(--cream);border-color:var(--walnut);}
 
   /* ===== Testimonials ===== */
   .testi-card{background:var(--cream);border:1px solid var(--line);padding:1.9rem 1.7rem;border-radius:3px;height:100%;}
-  .testi-card .quote{color:var(--walnut-soft);font-size:.98rem;}
+  .testi-card .quote{color:var(--walnut-soft);font-size:1rem;}
 
   /* ===== Contact ===== */
   .contact-form input,.contact-form textarea{
@@ -126,7 +176,7 @@
     background:rgba(245,240,230,.1);border-color:var(--copper);color:var(--cream);box-shadow:none;
   }
   .contact-info-item{border-bottom:1px solid rgba(245,240,230,.15);padding:1.05rem 0;}
-  .contact-info-item b{display:block;font-size:.95rem;}
+  .contact-info-item b{display:block;font-size:.98rem;}
   .contact-info-item span{font-size:.85rem;color:#D8CDBF;}
 
   /* ===== Developer / Template banner ===== */
@@ -136,48 +186,53 @@
     border-radius:4px;
   }
   .dev-banner h5{color:#E8B98C;}
-  .dev-banner .dev-name{font-family:'Fraunces',serif;font-size:1.15rem;color:var(--cream);}
+  .dev-banner .dev-name{font-size:1.2rem;color:var(--cream);}
   .dev-banner .dev-phone{font-size:1.05rem;color:#E8B98C;font-weight:700;}
 
   footer{background:#1B120D;color:#C9BCA9;}
-  footer h6{color:var(--cream);font-family:'Work Sans',sans-serif;font-weight:600;}
+  footer h6{color:var(--cream);font-weight:600;}
   footer a{color:#B4A692;text-decoration:none;}
   footer a:hover{color:#E8B98C;}
-  .footer-logo{font-family:'Fraunces',serif;color:var(--cream);font-size:1.35rem;}
+  .footer-logo{color:var(--cream);font-size:1.4rem;}
 
   @media (max-width:767.98px){
-    .hero h1{font-size:2.1rem;}
+    .hero h1{font-size:1.9rem;}
     .hero-img-wrap img{height:300px;}
     .float-card{position:static;margin-top:1rem;max-width:100%;}
   }
 </style>
 </head>
-<body>
+<body class="lang-ur">
 
 <!-- Template notice -->
 <div class="notice-bar text-center">
   <div class="container">
-    <strong class="text-copper">Demo / Template Website</strong> — sample site, not a real business. Want this for your own carpentry business? See developer contact in the footer.
+    <strong class="text-copper i18n" data-en="Demo / Template Website" data-ur="ڈیمو / ٹیمپلیٹ ویب سائٹ"></strong>
+    <span class="i18n" data-en=" — sample site, not a real business. Want this for your own carpentry business? See developer contact in the footer." data-ur=" — یہ ایک نمونہ سائٹ ہے، اصلی کاروبار نہیں۔ اپنے کارپینٹری کاروبار کے لیے یہ ویب سائٹ چاہیے؟ فوٹر میں ڈیویلپر کا رابطہ نمبر دیکھیں۔"></span>
   </div>
 </div>
 
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg sticky-top py-3">
   <div class="container">
-    <a class="navbar-brand" href="#">Sattar Wood Works<small>KITCHEN &amp; HOME DECORATION CARPENTER — KARACHI</small></a>
+    <a class="navbar-brand" href="#">ستار وڈ ورکس<small class="i18n" data-en="KITCHEN &amp; HOME DECORATION CARPENTER — KARACHI" data-ur="کچن اور ہوم ڈیکوریشن کارپینٹر — کراچی"></small></a>
     <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navMenu">
       <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-4">
-        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-        <li class="nav-item"><a class="nav-link" href="#materials">Materials</a></li>
-        <li class="nav-item"><a class="nav-link" href="#portfolio">Our Work</a></li>
-        <li class="nav-item"><a class="nav-link" href="#process">Process</a></li>
-        <li class="nav-item"><a class="nav-link" href="#areas">Areas</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-        <li class="nav-item mt-3 mt-lg-0">
-          <a href="#contact" class="btn btn-copper btn-sm px-3">Get Free Quote</a>
+        <li class="nav-item"><a class="nav-link i18n" href="#services" data-en="Services" data-ur="خدمات"></a></li>
+        <li class="nav-item"><a class="nav-link i18n" href="#materials" data-en="Materials" data-ur="میٹریل"></a></li>
+        <li class="nav-item"><a class="nav-link i18n" href="#portfolio" data-en="Our Work" data-ur="ہمارا کام"></a></li>
+        <li class="nav-item"><a class="nav-link i18n" href="#process" data-en="Process" data-ur="طریقہ کار"></a></li>
+        <li class="nav-item"><a class="nav-link i18n" href="#areas" data-en="Areas" data-ur="علاقے"></a></li>
+        <li class="nav-item"><a class="nav-link i18n" href="#contact" data-en="Contact" data-ur="رابطہ"></a></li>
+        <li class="nav-item mt-3 mt-lg-0 d-flex align-items-center gap-3">
+          <div class="lang-switch">
+            <button type="button" id="btnUr" class="active" onclick="setLang('ur')">اردو</button>
+            <button type="button" id="btnEn" onclick="setLang('en')">English</button>
+          </div>
+          <a href="#contact" class="btn btn-copper btn-sm px-3 i18n" data-en="Get Free Quote" data-ur="مفت کوٹ حاصل کریں"></a>
         </li>
       </ul>
     </div>
@@ -189,25 +244,25 @@
   <div class="container">
     <div class="row align-items-center g-5">
       <div class="col-lg-6">
-        <div class="section-kicker mb-2">Trusted Carpenter Service, All Over Karachi</div>
-        <h1 class="mb-3">Kitchens, cabinets and interiors built by hand for how your home really lives.</h1>
-        <p class="lead">From modular kitchen cabinets and sinks to wardrobes, wall units and full home decoration carpentry — Sattar Wood Works designs and builds it on-site, with solid wood and honest pricing.</p>
+        <div class="section-kicker mb-2 i18n" data-en="Trusted Carpenter Service, All Over Karachi" data-ur="کراچی بھر میں قابلِ اعتماد کارپینٹر سروس"></div>
+        <h1 class="mb-3 i18n" data-en="Kitchens, cabinets and interiors built by hand for how your home really lives." data-ur="کچن، کیبنٹس اور انٹیریئر — آپ کے گھر کی اصل ضرورت کے مطابق ہاتھ سے تیار۔"></h1>
+        <p class="lead i18n" data-en="From modular kitchen cabinets and sinks to wardrobes, wall units and full home decoration carpentry — Sattar Wood Works designs and builds it on-site, with solid wood and honest pricing." data-ur="ماڈیولر کچن کیبنٹس اور سنک سے لے کر واردروب، وال یونٹس اور مکمل ہوم ڈیکوریشن کارپینٹری تک — ستار وڈ ورکس ہر کام سائٹ پر، مضبوط لکڑی اور شفاف قیمت کے ساتھ مکمل کرتا ہے۔"></p>
         <div class="d-flex flex-wrap gap-3 my-4">
-          <a href="#contact" class="btn btn-copper btn-lg px-4">Book a Free Site Visit</a>
-          <a href="#portfolio" class="btn btn-outline-walnut btn-lg px-4">View Our Work</a>
+          <a href="#contact" class="btn btn-copper btn-lg px-4 i18n" data-en="Book a Free Site Visit" data-ur="مفت سائٹ وزٹ بک کریں"></a>
+          <a href="#portfolio" class="btn btn-outline-walnut btn-lg px-4 i18n" data-en="View Our Work" data-ur="ہمارا کام دیکھیں"></a>
         </div>
         <div class="d-flex gap-4 border-top pt-3" style="border-color:var(--line)!important;">
-          <div class="stat"><b>12+</b><span>Years of carpentry work</span></div>
-          <div class="stat"><b>480+</b><span>Kitchens &amp; homes completed</span></div>
-          <div class="stat"><b>All Areas</b><span>Service across Karachi</span></div>
+          <div class="stat"><b>+12</b><span class="i18n" data-en="Years of carpentry work" data-ur="سال کا تجربہ"></span></div>
+          <div class="stat"><b>+480</b><span class="i18n" data-en="Kitchens &amp; homes completed" data-ur="مکمل شدہ گھر اور کچن"></span></div>
+          <div class="stat"><b class="i18n" data-en="All Areas" data-ur="تمام علاقے"></b><span class="i18n" data-en="Service across Karachi" data-ur="کراچی بھر میں سروس"></span></div>
         </div>
       </div>
       <div class="col-lg-6">
         <div class="hero-img-wrap">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmyBh9hOKyryuk7NJzTvh-dOKjdjONxJZIjrAmhQD_5_kvA1mW5hlYwvo&s=10" alt="Sample modular kitchen with cabinets and sink" class="w-100">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmyBh9hOKyryuk7NJzTvh-dOKjdjONxJZIjrAmhQD_5_kvA1mW5hlYwvo&s=10" alt="Sample modular kitchen with cabinets and sink">
           <div class="float-card">
-            <b>DHA Phase 6 Kitchen</b>
-            <span>Full modular kitchen — cabinets, granite sink counter &amp; wood paneling (sample project)</span>
+            <b class="i18n" data-en="DHA Phase 6 Kitchen" data-ur="ڈی ایچ اے فیز 6 کچن"></b>
+            <span class="i18n" data-en="Full modular kitchen — cabinets, granite sink counter &amp; wood paneling (sample project)" data-ur="مکمل ماڈیولر کچن — کیبنٹس، گرینائٹ سنک کاؤنٹر اور لکڑی کی پینلنگ (نمونہ پروجیکٹ)"></span>
           </div>
         </div>
       </div>
@@ -220,52 +275,52 @@
   <div class="container py-4">
     <div class="row">
       <div class="col-lg-6 mb-5">
-        <div class="section-kicker mb-2">What We Build</div>
-        <h2>Carpentry for the whole home</h2>
-        <p class="text-muted-warm">Every piece is measured, designed and fabricated for your space — not off a catalogue shelf.</p>
+        <div class="section-kicker mb-2 i18n" data-en="What We Build" data-ur="ہم کیا بناتے ہیں"></div>
+        <h2 class="i18n" data-en="Carpentry for the whole home" data-ur="پورے گھر کے لیے کارپینٹری"></h2>
+        <p class="text-muted-warm i18n" data-en="Every piece is measured, designed and fabricated for your space — not off a catalogue shelf." data-ur="ہر چیز آپ کی جگہ کے مطابق ناپی، ڈیزائن اور تیار کی جاتی ہے — تیار شدہ کیٹلاگ سے نہیں۔"></p>
       </div>
     </div>
     <div class="row g-4">
       <div class="col-md-6 col-lg-4">
         <div class="service-card">
           <div class="icon"><i class="bi bi-house-gear"></i></div>
-          <h3 class="h5">Modular Kitchen Cabinets</h3>
-          <p class="text-muted-warm mb-0">Custom kitchen units, islands and pantry cabinets in laminate, PVC or solid wood finish.</p>
+          <h3 class="h5 i18n" data-en="Modular Kitchen Cabinets" data-ur="ماڈیولر کچن کیبنٹس"></h3>
+          <p class="text-muted-warm mb-0 i18n" data-en="Custom kitchen units, islands and pantry cabinets in laminate, PVC or solid wood finish." data-ur="لیمینیٹ، پی وی سی یا سولڈ ووڈ فنش میں کسٹم کچن یونٹس، آئی لینڈ اور پینٹری کیبنٹس۔"></p>
         </div>
       </div>
       <div class="col-md-6 col-lg-4">
         <div class="service-card">
           <div class="icon"><i class="bi bi-droplet-half"></i></div>
-          <h3 class="h5">Kitchen Sinks &amp; Counters</h3>
-          <p class="text-muted-warm mb-0">Sink fitting, granite/marble counter tops and matching cabinet units built around them.</p>
+          <h3 class="h5 i18n" data-en="Kitchen Sinks &amp; Counters" data-ur="کچن سنک اور کاؤنٹرز"></h3>
+          <p class="text-muted-warm mb-0 i18n" data-en="Sink fitting, granite/marble counter tops and matching cabinet units built around them." data-ur="سنک فٹنگ، گرینائٹ/ماربل کاؤنٹر ٹاپس اور اس کے ساتھ میچنگ کیبنٹ یونٹس۔"></p>
         </div>
       </div>
       <div class="col-md-6 col-lg-4">
         <div class="service-card">
           <div class="icon"><i class="bi bi-door-closed"></i></div>
-          <h3 class="h5">Wardrobes &amp; Dressing Rooms</h3>
-          <p class="text-muted-warm mb-0">Sliding, hinged and walk-in wardrobes built to fit every corner of the bedroom.</p>
+          <h3 class="h5 i18n" data-en="Wardrobes &amp; Dressing Rooms" data-ur="واردروب اور ڈریسنگ رومز"></h3>
+          <p class="text-muted-warm mb-0 i18n" data-en="Sliding, hinged and walk-in wardrobes built to fit every corner of the bedroom." data-ur="سلائیڈنگ، ہنجڈ اور واک اِن واردروب، بیڈروم کے ہر کونے کے مطابق۔"></p>
         </div>
       </div>
       <div class="col-md-6 col-lg-4">
         <div class="service-card">
           <div class="icon"><i class="bi bi-tv"></i></div>
-          <h3 class="h5">TV Units &amp; Wall Panelling</h3>
-          <p class="text-muted-warm mb-0">Decorative wall units, false ceiling trims and feature panelling for living and TV lounges.</p>
+          <h3 class="h5 i18n" data-en="TV Units &amp; Wall Panelling" data-ur="ٹی وی یونٹس اور وال پینلنگ"></h3>
+          <p class="text-muted-warm mb-0 i18n" data-en="Decorative wall units, false ceiling trims and feature panelling for living and TV lounges." data-ur="لیونگ اور ٹی وی لاؤنج کے لیے آرائشی وال یونٹس، فالس سیلنگ ٹرمز اور فیچر پینلنگ۔"></p>
         </div>
       </div>
       <div class="col-md-6 col-lg-4">
         <div class="service-card">
           <div class="icon"><i class="bi bi-book"></i></div>
-          <h3 class="h5">Office &amp; Study Furniture</h3>
-          <p class="text-muted-warm mb-0">Study tables, bookshelves and office cabins built for home offices and small businesses.</p>
+          <h3 class="h5 i18n" data-en="Office &amp; Study Furniture" data-ur="آفس اور اسٹڈی فرنیچر"></h3>
+          <p class="text-muted-warm mb-0 i18n" data-en="Study tables, bookshelves and office cabins built for home offices and small businesses." data-ur="ہوم آفس اور چھوٹے کاروبار کے لیے اسٹڈی ٹیبلز، بک شیلفز اور آفس کیبنز۔"></p>
         </div>
       </div>
       <div class="col-md-6 col-lg-4">
         <div class="service-card">
           <div class="icon"><i class="bi bi-stars"></i></div>
-          <h3 class="h5">Home Decoration Carpentry</h3>
-          <p class="text-muted-warm mb-0">Decorative niches, shoe racks, crockery units and full-home interior woodwork.</p>
+          <h3 class="h5 i18n" data-en="Home Decoration Carpentry" data-ur="ہوم ڈیکوریشن کارپینٹری"></h3>
+          <p class="text-muted-warm mb-0 i18n" data-en="Decorative niches, shoe racks, crockery units and full-home interior woodwork." data-ur="آرائشی طاق، شو ریک، کراکری یونٹس اور مکمل گھریلو انٹیریئر ووڈ ورک۔"></p>
         </div>
       </div>
     </div>
@@ -277,56 +332,56 @@
   <div class="container py-4">
     <div class="row">
       <div class="col-lg-6 mb-5">
-        <div class="section-kicker mb-2">Materials We Use</div>
-        <h2>Wood sheets &amp; boards we work with</h2>
-        <p class="text-muted-warm">We only fabricate with branded boards and laminates, so every cabinet and sink counter holds up to daily kitchen use.</p>
+        <div class="section-kicker mb-2 i18n" data-en="Materials We Use" data-ur="استعمال شدہ میٹریل"></div>
+        <h2 class="i18n" data-en="Wood sheets &amp; boards we work with" data-ur="لکڑی کی شیٹس اور بورڈز جو ہم استعمال کرتے ہیں"></h2>
+        <p class="text-muted-warm i18n" data-en="We only fabricate with branded boards and laminates, so every cabinet and sink counter holds up to daily kitchen use." data-ur="ہم صرف برانڈڈ بورڈز اور لیمینیٹ سے کام کرتے ہیں تاکہ ہر کیبنٹ اور سنک کاؤنٹر روزمرہ استعمال میں مضبوط رہے۔"></p>
       </div>
     </div>
     <div class="row g-4">
       <div class="col-6 col-md-4 col-lg-2">
         <div class="service-card text-center py-4">
           <div class="icon"><i class="bi bi-layers"></i></div>
-          <h3 class="h6 mb-1">Patex</h3>
-          <p class="text-muted-warm small mb-0">MDF &amp; particle boards</p>
+          <h3 class="h6 mb-1">پیٹیکس</h3>
+          <p class="text-muted-warm small mb-0 i18n" data-en="MDF &amp; particle boards" data-ur="ایم ڈی ایف اور پارٹیکل بورڈز"></p>
         </div>
       </div>
       <div class="col-6 col-md-4 col-lg-2">
         <div class="service-card text-center py-4">
           <div class="icon"><i class="bi bi-layers"></i></div>
-          <h3 class="h6 mb-1">Ghani Board</h3>
-          <p class="text-muted-warm small mb-0">Chipboard &amp; particle board</p>
+          <h3 class="h6 mb-1">غنی بورڈ</h3>
+          <p class="text-muted-warm small mb-0 i18n" data-en="Chipboard &amp; particle board" data-ur="چپ بورڈ اور پارٹیکل بورڈ"></p>
         </div>
       </div>
       <div class="col-6 col-md-4 col-lg-2">
         <div class="service-card text-center py-4">
           <div class="icon"><i class="bi bi-layers"></i></div>
-          <h3 class="h6 mb-1">Century Board</h3>
-          <p class="text-muted-warm small mb-0">MDF sheets</p>
+          <h3 class="h6 mb-1">سینچری بورڈ</h3>
+          <p class="text-muted-warm small mb-0 i18n" data-en="MDF sheets" data-ur="ایم ڈی ایف شیٹس"></p>
         </div>
       </div>
       <div class="col-6 col-md-4 col-lg-2">
         <div class="service-card text-center py-4">
           <div class="icon"><i class="bi bi-layers"></i></div>
-          <h3 class="h6 mb-1">Diamond Board</h3>
-          <p class="text-muted-warm small mb-0">Particle board</p>
+          <h3 class="h6 mb-1">ڈائمنڈ بورڈ</h3>
+          <p class="text-muted-warm small mb-0 i18n" data-en="Particle board" data-ur="پارٹیکل بورڈ"></p>
         </div>
       </div>
       <div class="col-6 col-md-4 col-lg-2">
         <div class="service-card text-center py-4">
           <div class="icon"><i class="bi bi-palette"></i></div>
-          <h3 class="h6 mb-1">Merino Laminate</h3>
-          <p class="text-muted-warm small mb-0">Sunmica / laminate sheets</p>
+          <h3 class="h6 mb-1">میرینو لیمینیٹ</h3>
+          <p class="text-muted-warm small mb-0 i18n" data-en="Sunmica / laminate sheets" data-ur="سن مائیکا / لیمینیٹ شیٹس"></p>
         </div>
       </div>
       <div class="col-6 col-md-4 col-lg-2">
         <div class="service-card text-center py-4">
           <div class="icon"><i class="bi bi-palette"></i></div>
-          <h3 class="h6 mb-1">Royal Laminate</h3>
-          <p class="text-muted-warm small mb-0">PVC &amp; laminate finish</p>
+          <h3 class="h6 mb-1">رائل لیمینیٹ</h3>
+          <p class="text-muted-warm small mb-0 i18n" data-en="PVC &amp; laminate finish" data-ur="پی وی سی اور لیمینیٹ فنش"></p>
         </div>
       </div>
     </div>
-    <p class="text-muted-warm small mt-4 mb-0"><i class="bi bi-info-circle me-1"></i>Board and laminate brand shown here for demonstration — the actual brands used are confirmed with the client before fabrication starts.</p>
+    <p class="text-muted-warm small mt-4 mb-0"><i class="bi bi-info-circle me-1"></i><span class="i18n" data-en="Board and laminate brand shown here for demonstration — the actual brands used are confirmed with the client before fabrication starts." data-ur="بورڈ اور لیمینیٹ برانڈ صرف نمونے کے طور پر دکھائے گئے ہیں — اصل استعمال ہونے والے برانڈز کام شروع کرنے سے پہلے کلائنٹ سے طے کیے جاتے ہیں۔"></span></p>
   </div>
 </section>
 
@@ -335,92 +390,140 @@
   <div class="container py-4">
     <div class="row">
       <div class="col-lg-6 mb-5">
-        <div class="section-kicker mb-2">Recent Projects</div>
-        <h2>Kitchens, cabinets &amp; sinks we've built</h2>
-        <p class="text-muted-warm">Sample projects shown here for demonstration — every real project on this site would carry the client's actual photos.</p>
+        <div class="section-kicker mb-2 i18n" data-en="Recent Projects" data-ur="حالیہ پروجیکٹس"></div>
+        <h2 class="i18n" data-en="Kitchens, cabinets &amp; sinks we've built" data-ur="کچن، کیبنٹس اور سنک جو ہم نے بنائے"></h2>
+        <p class="text-muted-warm i18n" data-en="Sample projects shown here for demonstration — every real project on this site would carry the client's actual photos. Click any photo to see it larger." data-ur="یہاں دکھائے گئے پروجیکٹس صرف نمونے کے طور پر ہیں — ہر اصل پروجیکٹ پر کلائنٹ کی حقیقی تصاویر ہوں گی۔ کسی بھی تصویر پر کلک کر کے بڑا سائز دیکھیں۔"></p>
       </div>
     </div>
     <div class="row g-3">
       <div class="col-md-6">
-        <div class="project-card" style="height:420px;">
-          <span class="badge-cat">Modular Kitchen</span>
+        <div class="project-card" style="height:420px;"
+             onclick="openLightbox('https://st.hzcdn.com/simgs/ab51d8020de959ab_14-0360/photo.jpg','Bahadurabad Kitchen Remodel','بہادر آباد کچن ری ماڈل','Modular kitchen with breakfast counter','ماڈیولر کچن بریک فاسٹ کاؤنٹر کے ساتھ')">
+          <span class="badge-cat i18n" data-en="Modular Kitchen" data-ur="ماڈیولر کچن"></span>
+          <span class="zoom-hint"><i class="bi bi-zoom-in"></i></span>
           <img src="https://st.hzcdn.com/simgs/ab51d8020de959ab_14-0360/photo.jpg" alt="Modular kitchen with cabinets, sample project">
-          <div class="overlay"><b>Bahadurabad Kitchen Remodel</b><span>Modular kitchen with breakfast counter</span></div>
+          <div class="overlay">
+            <b class="i18n" data-en="Bahadurabad Kitchen Remodel" data-ur="بہادر آباد کچن ری ماڈل"></b>
+            <span class="i18n" data-en="Modular kitchen with breakfast counter" data-ur="ماڈیولر کچن بریک فاسٹ کاؤنٹر کے ساتھ"></span>
+          </div>
         </div>
       </div>
       <div class="col-md-6">
         <div class="row g-3 h-100">
           <div class="col-12" style="height:200px;">
-            <div class="project-card h-100">
-              <span class="badge-cat">Kitchen Sink &amp; Counter</span>
+            <div class="project-card h-100"
+                 onclick="openLightbox('https://i.pinimg.com/236x/9e/7a/04/9e7a04efb45a31c0ccc5dbf3a307d8ca.jpg','Clifton Sink &amp; Counter Set-up','کلفٹن سنک اینڈ کاؤنٹر سیٹ اپ','Granite counter with steel sink fitting','گرینائٹ کاؤنٹر کے ساتھ سٹیل سنک فٹنگ')">
+              <span class="badge-cat i18n" data-en="Kitchen Sink &amp; Counter" data-ur="کچن سنک اور کاؤنٹر"></span>
+              <span class="zoom-hint"><i class="bi bi-zoom-in"></i></span>
               <img src="https://i.pinimg.com/236x/9e/7a/04/9e7a04efb45a31c0ccc5dbf3a307d8ca.jpg" alt="Kitchen sink and granite counter, sample project">
-              <div class="overlay"><b>Clifton Sink &amp; Counter Set-up</b><span>Granite counter with steel sink fitting</span></div>
+              <div class="overlay">
+                <b class="i18n" data-en="Clifton Sink &amp; Counter Set-up" data-ur="کلفٹن سنک اینڈ کاؤنٹر سیٹ اپ"></b>
+                <span class="i18n" data-en="Granite counter with steel sink fitting" data-ur="گرینائٹ کاؤنٹر کے ساتھ سٹیل سنک فٹنگ"></span>
+              </div>
             </div>
           </div>
           <div class="col-12" style="height:200px;">
-            <div class="project-card h-100">
-              <span class="badge-cat">Kitchen Cabinets</span>
+            <div class="project-card h-100"
+                 onclick="openLightbox('https://simpolo-web.s3.ap-south-1.amazonaws.com/uploads/media/blog/Smart-Accessories.jpg','Gulshan-e-Iqbal Cabinet Set','گلشنِ اقبال کیبنٹ سیٹ','Overhead &amp; base cabinets, laminate finish','اوور ہیڈ اور بیس کیبنٹس، لیمینیٹ فنش')">
+              <span class="badge-cat i18n" data-en="Kitchen Cabinets" data-ur="کچن کیبنٹس"></span>
+              <span class="zoom-hint"><i class="bi bi-zoom-in"></i></span>
               <img src="https://simpolo-web.s3.ap-south-1.amazonaws.com/uploads/media/blog/Smart-Accessories.jpg" alt="Kitchen cabinets, sample project">
-              <div class="overlay"><b>Gulshan-e-Iqbal Cabinet Set</b><span>Overhead &amp; base cabinets, laminate finish</span></div>
+              <div class="overlay">
+                <b class="i18n" data-en="Gulshan-e-Iqbal Cabinet Set" data-ur="گلشنِ اقبال کیبنٹ سیٹ"></b>
+                <span class="i18n" data-en="Overhead &amp; base cabinets, laminate finish" data-ur="اوور ہیڈ اور بیس کیبنٹس، لیمینیٹ فنش"></span>
+              </div>
             </div>
           </div>
         </div>
       </div>
       <div class="col-md-4">
-        <div class="project-card" style="height:280px;">
-          <span class="badge-cat">Wardrobe</span>
-          <img src="https://paktameer.com/wp-content/uploads/2025/05/Pritt94.5Armoire-1407710254.webp" alt="Wardrobe, sample project">
-          <div class="overlay"><b>Clifton Walk-in Wardrobe</b><span>Full dressing room, sliding doors</span></div>
+        <div class="project-card" style="height:280px;"
+             onclick="openLightbox('https://www.oppeinhome.com/upload/images/ueditor/20230912/top-kitchen-design-ideas-that-inspire-you-7.webp','Clifton Walk-in Wardrobe','کلفٹن واک اِن واردروب','Full dressing room, sliding doors','مکمل ڈریسنگ روم، سلائیڈنگ دروازے')">
+          <span class="badge-cat i18n" data-en="Wardrobe" data-ur="واردروب"></span>
+          <span class="zoom-hint"><i class="bi bi-zoom-in"></i></span>
+          <img src="https://www.oppeinhome.com/upload/images/ueditor/20230912/top-kitchen-design-ideas-that-inspire-you-7.webp" alt="Wardrobe, sample project">
+          <div class="overlay">
+            <b class="i18n" data-en="Clifton Walk-in Wardrobe" data-ur="کلفٹن واک اِن واردروب"></b>
+            <span class="i18n" data-en="Full dressing room, sliding doors" data-ur="مکمل ڈریسنگ روم، سلائیڈنگ دروازے"></span>
+          </div>
         </div>
       </div>
       <div class="col-md-4">
-        <div class="project-card" style="height:280px;">
-          <span class="badge-cat">Kitchen Cabinets</span>
-          <img src="https://www.oppeinhome.com/upload/images/ueditor/20230912/top-kitchen-design-ideas-that-inspire-you-7.webp" alt="L shaped kitchen cabinets with sink, sample project">
-          <div class="overlay"><b>Nazimabad Kitchen</b><span>L-shaped cabinets with sink unit, wood finish</span></div>
+        <div class="project-card" style="height:280px;"
+             onclick="openLightbox('https://m.media-amazon.com/images/I/51ZJ3IikdfL._AC_UF350,350_QL80_.jpg','Nazimabad Kitchen','ناظم آباد کچن','L-shaped cabinets with sink unit, wood finish','ایل شیپ کیبنٹس بمع سنک یونٹ، ووڈ فنش')">
+          <span class="badge-cat i18n" data-en="Kitchen Cabinets" data-ur="کچن کیبنٹس"></span>
+          <span class="zoom-hint"><i class="bi bi-zoom-in"></i></span>
+          <img src="https://m.media-amazon.com/images/I/51ZJ3IikdfL._AC_UF350,350_QL80_.jpg" alt="L shaped kitchen cabinets with sink, sample project">
+          <div class="overlay">
+            <b class="i18n" data-en="Nazimabad Kitchen" data-ur="ناظم آباد کچن"></b>
+            <span class="i18n" data-en="L-shaped cabinets with sink unit, wood finish" data-ur="ایل شیپ کیبنٹس بمع سنک یونٹ، ووڈ فنش"></span>
+          </div>
         </div>
       </div>
       <div class="col-md-4">
-        <div class="project-card" style="height:280px;">
-          <span class="badge-cat">Doors</span>
-          <img src="https://m.media-amazon.com/images/I/51ZJ3IikdfL._AC_UF350,350_QL80_.jpg" alt="Wooden doors, sample project">
-          <div class="overlay"><b>North Nazimabad Doors</b><span>Solid wood doors &amp; frames</span></div>
+        <div class="project-card" style="height:280px;"
+             onclick="openLightbox('https://simpolo-web.s3.ap-south-1.amazonaws.com/uploads/media/blog/Smart-Accessories.jpg','North Nazimabad Doors','نارتھ ناظم آباد دروازے','Solid wood doors &amp; frames','سولڈ ووڈ دروازے اور فریمز')">
+          <span class="badge-cat i18n" data-en="Doors" data-ur="دروازے"></span>
+          <span class="zoom-hint"><i class="bi bi-zoom-in"></i></span>
+          <img src="https://simpolo-web.s3.ap-south-1.amazonaws.com/uploads/media/blog/Smart-Accessories.jpg" alt="Wooden doors, sample project">
+          <div class="overlay">
+            <b class="i18n" data-en="North Nazimabad Doors" data-ur="نارتھ ناظم آباد دروازے"></b>
+            <span class="i18n" data-en="Solid wood doors &amp; frames" data-ur="سولڈ ووڈ دروازے اور فریمز"></span>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- Lightbox Modal -->
+<div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalTitle"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img id="modalImage" src="" alt="">
+      </div>
+      <div class="modal-footer">
+        <span id="modalCaption"></span>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- Process -->
 <section id="process" class="bg-cream2 py-5">
   <div class="container py-4">
     <div class="row">
       <div class="col-lg-6 mb-5">
-        <div class="section-kicker mb-2">How It Works</div>
-        <h2>From site visit to installation</h2>
-        <p class="text-muted-warm">Four steps, start to finish — most kitchens and wardrobes are completed within 10 to 18 working days.</p>
+        <div class="section-kicker mb-2 i18n" data-en="How It Works" data-ur="طریقہ کار"></div>
+        <h2 class="i18n" data-en="From site visit to installation" data-ur="سائٹ وزٹ سے تنصیب تک"></h2>
+        <p class="text-muted-warm i18n" data-en="Four steps, start to finish — most kitchens and wardrobes are completed within 10 to 18 working days." data-ur="چار مراحل — زیادہ تر کچن اور واردروب 10 سے 18 ورکنگ دنوں میں مکمل ہو جاتے ہیں۔"></p>
       </div>
     </div>
     <div class="row g-4">
       <div class="col-6 col-lg-3">
         <div class="process-num mb-2">1</div>
-        <h4 class="h6">Free Site Visit</h4>
-        <p class="text-muted-warm small mb-0">Our carpenter visits your home anywhere in Karachi to take measurements.</p>
+        <h4 class="h6 i18n" data-en="Free Site Visit" data-ur="مفت سائٹ وزٹ"></h4>
+        <p class="text-muted-warm small mb-0 i18n" data-en="Our carpenter visits your home anywhere in Karachi to take measurements." data-ur="ہمارا کارپینٹر کراچی میں کہیں بھی آپ کے گھر ناپ کے لیے آتا ہے۔"></p>
       </div>
       <div class="col-6 col-lg-3">
         <div class="process-num mb-2">2</div>
-        <h4 class="h6">Design &amp; Quote</h4>
-        <p class="text-muted-warm small mb-0">We share a layout, material options and a clear price quote.</p>
+        <h4 class="h6 i18n" data-en="Design &amp; Quote" data-ur="ڈیزائن اور کوٹ"></h4>
+        <p class="text-muted-warm small mb-0 i18n" data-en="We share a layout, material options and a clear price quote." data-ur="کام شروع کرنے سے پہلے ہم لے آؤٹ، میٹریل آپشنز اور واضح قیمت دیتے ہیں۔"></p>
       </div>
       <div class="col-6 col-lg-3">
         <div class="process-num mb-2">3</div>
-        <h4 class="h6">Fabrication</h4>
-        <p class="text-muted-warm small mb-0">Cabinets, sinks and units are built at our workshop to exact size.</p>
+        <h4 class="h6 i18n" data-en="Fabrication" data-ur="تیاری"></h4>
+        <p class="text-muted-warm small mb-0 i18n" data-en="Cabinets, sinks and units are built at our workshop to exact size." data-ur="کیبنٹس، سنک اور یونٹس ہماری ورکشاپ میں درست ناپ کے مطابق تیار کیے جاتے ہیں۔"></p>
       </div>
       <div class="col-6 col-lg-3">
         <div class="process-num mb-2">4</div>
-        <h4 class="h6">Installation</h4>
-        <p class="text-muted-warm small mb-0">Our team installs and fits everything on-site, finished and ready.</p>
+        <h4 class="h6 i18n" data-en="Installation" data-ur="تنصیب"></h4>
+        <p class="text-muted-warm small mb-0 i18n" data-en="Our team installs and fits everything on-site, finished and ready." data-ur="ہماری ٹیم سائٹ پر ہر چیز فٹ کرتی ہے، مکمل اور استعمال کے لیے تیار۔"></p>
       </div>
     </div>
   </div>
@@ -431,28 +534,28 @@
   <div class="container py-4">
     <div class="row">
       <div class="col-lg-6 mb-4">
-        <div class="section-kicker mb-2">Service Coverage</div>
-        <h2>Available all over Karachi</h2>
-        <p class="text-muted-warm">Site visits and installation across every major area of the city.</p>
+        <div class="section-kicker mb-2 i18n" data-en="Service Coverage" data-ur="سروس کوریج"></div>
+        <h2 class="i18n" data-en="Available all over Karachi" data-ur="کراچی بھر میں دستیاب"></h2>
+        <p class="text-muted-warm i18n" data-en="Site visits and installation across every major area of the city." data-ur="شہر کے تمام بڑے علاقوں میں سائٹ وزٹ اور تنصیب۔"></p>
       </div>
     </div>
     <div class="d-flex flex-wrap gap-2">
-      <span class="area-pill on">DHA</span>
-      <span class="area-pill on">Clifton</span>
-      <span class="area-pill">Gulshan-e-Iqbal</span>
-      <span class="area-pill">PECHS</span>
-      <span class="area-pill">Bahadurabad</span>
-      <span class="area-pill">Nazimabad</span>
-      <span class="area-pill">North Nazimabad</span>
-      <span class="area-pill">Gulistan-e-Johar</span>
-      <span class="area-pill">Malir</span>
-      <span class="area-pill">Korangi</span>
-      <span class="area-pill">Shah Faisal Colony</span>
-      <span class="area-pill">Federal B Area</span>
-      <span class="area-pill">Saddar</span>
-      <span class="area-pill">Landhi</span>
-      <span class="area-pill">Scheme 33</span>
-      <span class="area-pill">&amp; all surrounding areas</span>
+      <span class="area-pill on i18n" data-en="DHA" data-ur="ڈی ایچ اے"></span>
+      <span class="area-pill on i18n" data-en="Clifton" data-ur="کلفٹن"></span>
+      <span class="area-pill i18n" data-en="Gulshan-e-Iqbal" data-ur="گلشنِ اقبال"></span>
+      <span class="area-pill i18n" data-en="PECHS" data-ur="پی ای سی ایچ ایس"></span>
+      <span class="area-pill i18n" data-en="Bahadurabad" data-ur="بہادر آباد"></span>
+      <span class="area-pill i18n" data-en="Nazimabad" data-ur="ناظم آباد"></span>
+      <span class="area-pill i18n" data-en="North Nazimabad" data-ur="نارتھ ناظم آباد"></span>
+      <span class="area-pill i18n" data-en="Gulistan-e-Johar" data-ur="گلستانِ جوہر"></span>
+      <span class="area-pill i18n" data-en="Malir" data-ur="ملیر"></span>
+      <span class="area-pill i18n" data-en="Korangi" data-ur="کورنگی"></span>
+      <span class="area-pill i18n" data-en="Shah Faisal Colony" data-ur="شاہ فیصل کالونی"></span>
+      <span class="area-pill i18n" data-en="Federal B Area" data-ur="فیڈرل بی ایریا"></span>
+      <span class="area-pill i18n" data-en="Saddar" data-ur="صدر"></span>
+      <span class="area-pill i18n" data-en="Landhi" data-ur="لانڈھی"></span>
+      <span class="area-pill i18n" data-en="Scheme 33" data-ur="اسکیم 33"></span>
+      <span class="area-pill i18n" data-en="&amp; all surrounding areas" data-ur="اور تمام گردونواح"></span>
     </div>
   </div>
 </section>
@@ -462,27 +565,27 @@
   <div class="container py-4">
     <div class="row">
       <div class="col-lg-6 mb-5">
-        <div class="section-kicker mb-2">Client Feedback</div>
-        <h2>What homeowners say</h2>
+        <div class="section-kicker mb-2 i18n" data-en="Client Feedback" data-ur="کلائنٹس کی رائے"></div>
+        <h2 class="i18n" data-en="What homeowners say" data-ur="گھر والے کیا کہتے ہیں"></h2>
       </div>
     </div>
     <div class="row g-4">
       <div class="col-md-4">
         <div class="testi-card">
-          <p class="quote">"Kitchen ka kaam time pe complete hua aur finishing bohot achi thi. Cabinets aur sink abhi bhi bilkul theek chal rahe hain."</p>
-          <b>Ahmed Raza</b><br><span class="text-muted-warm small">DHA Phase 5, Karachi (sample review)</span>
+          <p class="quote i18n" data-en="“The kitchen work finished on time and the finishing was excellent. The cabinets and sink are still working perfectly.”" data-ur="“کچن کا کام وقت پر مکمل ہوا اور فنشنگ بہت اچھی تھی۔ کیبنٹس اور سنک ابھی بھی بالکل ٹھیک چل رہے ہیں۔”"></p>
+          <b>احمد رضا</b><br><span class="text-muted-warm small i18n" data-en="DHA Phase 5, Karachi (sample review)" data-ur="ڈی ایچ اے فیز 5، کراچی (نمونہ رائے)"></span>
         </div>
       </div>
       <div class="col-md-4">
         <div class="testi-card">
-          <p class="quote">"We got our wardrobes and kitchen cabinets done together. The team was punctual and the price matched the quote exactly."</p>
-          <b>Sana Khan</b><br><span class="text-muted-warm small">Gulshan-e-Iqbal, Karachi (sample review)</span>
+          <p class="quote i18n" data-en="“We got our wardrobes and kitchen cabinets done together. The team was punctual and the price matched the quote exactly.”" data-ur="“ہم نے اپنی واردروب اور کچن کیبنٹس اکٹھے بنوائے۔ ٹیم وقت کی پابند تھی اور قیمت بالکل کوٹ کے مطابق رہی۔”"></p>
+          <b>ثنا خان</b><br><span class="text-muted-warm small i18n" data-en="Gulshan-e-Iqbal, Karachi (sample review)" data-ur="گلشنِ اقبال، کراچی (نمونہ رائے)"></span>
         </div>
       </div>
       <div class="col-md-4">
         <div class="testi-card">
-          <p class="quote">"Bohot professional service thi, ghar par visit karke measurement li aur sink counter ka design pehle dikhaya. Recommended."</p>
-          <b>Bilal Siddiqui</b><br><span class="text-muted-warm small">Nazimabad, Karachi (sample review)</span>
+          <p class="quote i18n" data-en="“Very professional service — they visited the home to measure and showed the sink counter design beforehand. Recommended.”" data-ur="“بہت پروفیشنل سروس تھی، گھر آ کر ناپ لیا اور سنک کاؤنٹر کا ڈیزائن پہلے دکھایا۔ تجویز کردہ۔”"></p>
+          <b>بلال صدیقی</b><br><span class="text-muted-warm small i18n" data-en="Nazimabad, Karachi (sample review)" data-ur="ناظم آباد، کراچی (نمونہ رائے)"></span>
         </div>
       </div>
     </div>
@@ -490,41 +593,41 @@
 </section>
 
 <!-- Contact -->
-<section id="contact" class="bg-walnut text-cream py-5" style="color:var(--cream);">
+<section id="contact" class="bg-walnut py-5" style="color:var(--cream);">
   <div class="container py-4">
     <div class="row">
       <div class="col-lg-6 mb-5">
-        <div class="section-kicker mb-2" style="color:#E8B98C;">Get In Touch</div>
-        <h2 style="color:var(--cream);">Tell us about your kitchen or home project</h2>
-        <p style="color:#D8CDBF;">Share your area and requirement — we'll arrange a free site visit anywhere in Karachi.</p>
+        <div class="section-kicker mb-2 i18n" data-en="Get In Touch" data-ur="رابطہ کریں" style="color:#E8B98C;"></div>
+        <h2 class="i18n" data-en="Tell us about your kitchen or home project" data-ur="اپنے کچن یا گھر کے پروجیکٹ کے بارے میں بتائیں" style="color:var(--cream);"></h2>
+        <p class="i18n" data-en="Share your area and requirement — we'll arrange a free site visit anywhere in Karachi." data-ur="اپنا علاقہ اور ضرورت بتائیں — ہم کراچی میں کہیں بھی مفت سائٹ وزٹ کا بندوبست کریں گے۔" style="color:#D8CDBF;"></p>
       </div>
     </div>
     <div class="row g-5">
       <div class="col-lg-6">
         <div class="contact-info-item d-flex gap-3">
           <i class="bi bi-telephone-fill fs-5 text-copper"></i>
-          <div><b>Call / WhatsApp</b><span>0300 1234567 (sample business number)</span></div>
+          <div><b class="i18n" data-en="Call / WhatsApp" data-ur="کال / واٹس ایپ"></b><span class="i18n" data-en="0300 1234567 (sample business number)" data-ur="0300 1234567 (نمونہ نمبر)"></span></div>
         </div>
         <div class="contact-info-item d-flex gap-3">
           <i class="bi bi-geo-alt-fill fs-5 text-copper"></i>
-          <div><b>Workshop Address</b><span>Sample Address, Karachi, Pakistan</span></div>
+          <div><b class="i18n" data-en="Workshop Address" data-ur="ورکشاپ ایڈریس"></b><span class="i18n" data-en="Sample Address, Karachi, Pakistan" data-ur="نمونہ ایڈریس، کراچی، پاکستان"></span></div>
         </div>
         <div class="contact-info-item d-flex gap-3">
           <i class="bi bi-clock-fill fs-5 text-copper"></i>
-          <div><b>Working Hours</b><span>Monday – Saturday, 10:00 AM – 8:00 PM</span></div>
+          <div><b class="i18n" data-en="Working Hours" data-ur="اوقاتِ کار"></b><span class="i18n" data-en="Monday – Saturday, 10:00 AM – 8:00 PM" data-ur="پیر تا ہفتہ، صبح 10 بجے سے رات 8 بجے تک"></span></div>
         </div>
         <div class="contact-info-item d-flex gap-3">
           <i class="bi bi-signpost-2-fill fs-5 text-copper"></i>
-          <div><b>Service Area</b><span>All over Karachi — free site visit included</span></div>
+          <div><b class="i18n" data-en="Service Area" data-ur="سروس ایریا"></b><span class="i18n" data-en="All over Karachi — free site visit included" data-ur="کراچی بھر — مفت سائٹ وزٹ شامل ہے"></span></div>
         </div>
       </div>
       <div class="col-lg-6">
-        <form class="contact-form d-flex flex-column gap-3" onsubmit="event.preventDefault(); alert('This is a demo form on a template website — no request has actually been sent.');">
-          <input type="text" class="form-control py-2" placeholder="Your Name" required>
-          <input type="tel" class="form-control py-2" placeholder="Phone Number" required>
-          <input type="text" class="form-control py-2" placeholder="Area, Karachi" required>
-          <textarea class="form-control" rows="4" placeholder="Tell us about your kitchen / carpentry project"></textarea>
-          <button type="submit" class="btn btn-copper py-2 fw-semibold">Request Free Site Visit</button>
+        <form class="contact-form d-flex flex-column gap-3" onsubmit="event.preventDefault(); alert(currentLang==='ur' ? 'یہ ایک ٹیمپلیٹ ویب سائٹ پر ڈیمو فارم ہے — کوئی درخواست اصل میں نہیں بھیجی گئی۔' : 'This is a demo form on a template website — no request has actually been sent.');">
+          <input type="text" class="form-control py-2 i18n-ph" data-en-ph="Your Name" data-ur-ph="آپ کا نام" placeholder="آپ کا نام" required>
+          <input type="tel" class="form-control py-2 i18n-ph" data-en-ph="Phone Number" data-ur-ph="فون نمبر" placeholder="فون نمبر" required>
+          <input type="text" class="form-control py-2 i18n-ph" data-en-ph="Area, Karachi" data-ur-ph="علاقہ، کراچی" placeholder="علاقہ، کراچی" required>
+          <textarea class="form-control i18n-ph" rows="4" data-en-ph="Tell us about your kitchen / carpentry project" data-ur-ph="اپنے کچن/کارپینٹری پروجیکٹ کے بارے میں بتائیں" placeholder="اپنے کچن/کارپینٹری پروجیکٹ کے بارے میں بتائیں"></textarea>
+          <button type="submit" class="btn btn-copper py-2 fw-semibold i18n" data-en="Request Free Site Visit" data-ur="مفت سائٹ وزٹ کی درخواست دیں"></button>
         </form>
       </div>
     </div>
@@ -536,25 +639,25 @@
   <div class="container">
     <div class="row gy-5 pb-4 border-bottom" style="border-color:rgba(245,240,230,.1)!important;">
       <div class="col-lg-5">
-        <div class="footer-logo mb-2">Sattar Wood Works</div>
-        <p class="small">A sample kitchen &amp; home decoration carpentry business, built to demonstrate this website template. All content, images and reviews on this page are placeholders.</p>
+        <div class="footer-logo mb-2">ستار وڈ ورکس</div>
+        <p class="small i18n" data-en="A sample kitchen &amp; home decoration carpentry business, built to demonstrate this website template. All content, images and reviews on this page are placeholders." data-ur="کچن اور ہوم ڈیکوریشن کارپینٹری کا ایک نمونہ کاروبار، اس ویب سائٹ ٹیمپلیٹ کو ظاہر کرنے کے لیے بنایا گیا۔ اس صفحے پر موجود تمام مواد، تصاویر اور آراء نمونے کے طور پر ہیں۔"></p>
       </div>
       <div class="col-6 col-lg-3">
-        <h6 class="mb-3">Quick Links</h6>
+        <h6 class="mb-3 i18n" data-en="Quick Links" data-ur="فوری لنکس"></h6>
         <ul class="list-unstyled small d-flex flex-column gap-2">
-          <li><a href="#services">Services</a></li>
-          <li><a href="#portfolio">Our Work</a></li>
-          <li><a href="#process">Process</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#services" class="i18n" data-en="Services" data-ur="خدمات"></a></li>
+          <li><a href="#portfolio" class="i18n" data-en="Our Work" data-ur="ہمارا کام"></a></li>
+          <li><a href="#process" class="i18n" data-en="Process" data-ur="طریقہ کار"></a></li>
+          <li><a href="#contact" class="i18n" data-en="Contact" data-ur="رابطہ"></a></li>
         </ul>
       </div>
       <div class="col-6 col-lg-4">
-        <h6 class="mb-3">Services</h6>
+        <h6 class="mb-3 i18n" data-en="Services" data-ur="خدمات"></h6>
         <ul class="list-unstyled small d-flex flex-column gap-2">
-          <li>Modular Kitchens &amp; Sinks</li>
-          <li>Wardrobes &amp; Dressing Rooms</li>
-          <li>Wall Units &amp; Panelling</li>
-          <li>Doors &amp; Windows</li>
+          <li class="i18n" data-en="Modular Kitchens &amp; Sinks" data-ur="ماڈیولر کچن اور سنک"></li>
+          <li class="i18n" data-en="Wardrobes &amp; Dressing Rooms" data-ur="واردروب اور ڈریسنگ رومز"></li>
+          <li class="i18n" data-en="Wall Units &amp; Panelling" data-ur="وال یونٹس اور پینلنگ"></li>
+          <li class="i18n" data-en="Doors &amp; Windows" data-ur="دروازے اور کھڑکیاں"></li>
         </ul>
       </div>
     </div>
@@ -562,23 +665,57 @@
     <!-- Developer / purchase banner -->
     <div class="dev-banner p-4 my-4 d-flex flex-wrap justify-content-between align-items-center gap-3">
       <div style="max-width:560px;">
-        <h5 class="h6 mb-1">This is a template website</h5>
-        <p class="small mb-0" style="color:#D8CDBF;">Built as a demo for a Home Kitchen &amp; Decoration Carpenter business in Karachi. To purchase this website for your own carpentry business, contact the developer.</p>
+        <h5 class="h6 mb-1 i18n" data-en="This is a template website" data-ur="یہ ایک ٹیمپلیٹ ویب سائٹ ہے"></h5>
+        <p class="small mb-0 i18n" data-en="Built as a demo for a Home Kitchen &amp; Decoration Carpenter business in Karachi. To purchase this website for your own carpentry business, contact the developer." data-ur="کراچی میں ہوم کچن اینڈ ڈیکوریشن کارپینٹر کاروبار کے لیے بطور نمونہ بنائی گئی۔ اپنے کارپینٹری کاروبار کے لیے یہ ویب سائٹ خریدنے کے لیے ڈیویلپر سے رابطہ کریں۔" style="color:#D8CDBF;"></p>
       </div>
       <div class="text-lg-end">
-        <div class="dev-name"><i class="bi bi-code-slash text-copper me-1"></i> Jiskani Solutions</div>
-        <div class="small" style="color:#D8CDBF;">Developer: Muhammad Asim Raza</div>
+        <div class="dev-name"><i class="bi bi-code-slash text-copper me-1"></i> جسکانی سلوشنز</div>
+        <div class="small i18n" data-en="Developer: Muhammad Asim Raza" data-ur="ڈیویلپر: محمد عاصم رضا" style="color:#D8CDBF;"></div>
         <div class="dev-phone"><i class="bi bi-whatsapp"></i> 0304 1291775</div>
       </div>
     </div>
 
     <div class="d-flex flex-wrap justify-content-between small py-3" style="color:#8C7C68;">
-      <span>© 2026 Sattar Wood Works — Demo Template</span>
-      <span>Developed by Jiskani Solutions — Muhammad Asim Raza — 0304 1291775</span>
+      <span class="i18n" data-en="© 2026 Sattar Wood Works — Demo Template" data-ur="© 2026 ستار وڈ ورکس — ڈیمو ٹیمپلیٹ"></span>
+      <span class="i18n" data-en="Developed by Jiskani Solutions — Muhammad Asim Raza — 0304 1291775" data-ur="ڈیویلپ کردہ: جسکانی سلوشنز — محمد عاصم رضا — 0304 1291775"></span>
     </div>
   </div>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  var currentLang = 'ur';
+
+  function setLang(lang){
+    currentLang = lang;
+    document.documentElement.lang = lang;
+    document.documentElement.dir = lang === 'ur' ? 'rtl' : 'ltr';
+    document.body.classList.toggle('lang-en', lang === 'en');
+
+    document.querySelectorAll('.i18n').forEach(function(el){
+      var text = lang === 'ur' ? el.getAttribute('data-ur') : el.getAttribute('data-en');
+      if(text !== null){ el.textContent = text; }
+    });
+    document.querySelectorAll('.i18n-ph').forEach(function(el){
+      var text = lang === 'ur' ? el.getAttribute('data-ur-ph') : el.getAttribute('data-en-ph');
+      if(text !== null){ el.setAttribute('placeholder', text); }
+    });
+
+    document.getElementById('btnUr').classList.toggle('active', lang === 'ur');
+    document.getElementById('btnEn').classList.toggle('active', lang === 'en');
+  }
+
+  function openLightbox(src, titleEn, titleUr, capEn, capUr){
+    document.getElementById('modalImage').src = src;
+    document.getElementById('modalTitle').textContent = currentLang === 'ur' ? titleUr : titleEn;
+    document.getElementById('modalCaption').textContent = currentLang === 'ur' ? capUr : capEn;
+    var modal = new bootstrap.Modal(document.getElementById('imageModal'));
+    modal.show();
+  }
+
+  document.addEventListener('DOMContentLoaded', function(){
+    setLang('ur');
+  });
+</script>
 </body>
 </html>
