@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sattar Wood Works — Kitchen &amp; Home Decoration Carpenter, Karachi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<style>
+  :root{
+    --cream:#F5F0E6;
+    --cream-2:#EDE4D3;
+    --walnut:#241812;
+    --walnut-soft:#3A2A20;
+    --copper:#A8592D;
+    --copper-deep:#8A4622;
+    --text-muted:#6B5D4F;
+    --line:#DDD2BC;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--cream);
+    color:var(--walnut);
+    font-family:'Work Sans',sans-serif;
+    line-height:1.65;
+  }
+  h1,h2,h3,h4,h5{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    color:var(--walnut);
+  }
+  a{color:inherit;}
+  .text-muted-warm{color:var(--text-muted)!important;}
+  .bg-cream2{background:var(--cream-2);}
+  .bg-walnut{background:var(--walnut)!important;}
+  .text-copper{color:var(--copper)!important;}
+  .btn-copper{background:var(--copper);border-color:var(--copper);color:#fff;}
+  .btn-copper:hover{background:var(--copper-deep);border-color:var(--copper-deep);color:#fff;}
+  .btn-outline-walnut{border:1px solid var(--walnut);color:var(--walnut);}
+  .btn-outline-walnut:hover{background:var(--walnut);color:var(--cream);}
+  .section-kicker{font-size:.9rem;color:var(--copper-deep);font-weight:600;letter-spacing:.3px;}
+  .rounded-2{border-radius:4px;}
+
+  /* ===== Template top notice ===== */
+  .notice-bar{
+    background:var(--walnut);color:var(--cream);
+    font-size:.85rem;padding:.55rem 0;
+  }
+  .notice-bar a{color:#E8B98C;text-decoration:underline;}
+
+  /* ===== Navbar ===== */
+  .navbar-brand{
+    font-family:'Fraunces',serif;font-weight:700;font-size:1.35rem;line-height:1.1;color:var(--walnut)!important;
+  }
+  .navbar-brand small{display:block;font-family:'Work Sans',sans-serif;font-size:.62rem;font-weight:500;color:var(--text-muted);letter-spacing:.4px;}
+  .navbar{background:rgba(245,240,230,.94)!important;backdrop-filter:blur(6px);border-bottom:1px solid var(--line);}
+  .nav-link{color:var(--walnut-soft)!important;font-weight:500;}
+  .nav-link:hover{color:var(--copper)!important;}
+
+  /* ===== Hero ===== */
+  .hero{padding:5.5rem 0 5rem;}
+  .hero h1{font-size:3rem;letter-spacing:-.5px;}
+  .hero .lead{color:var(--text-muted);max-width:46ch;}
+  .hero-img-wrap{position:relative;}
+  .hero-img-wrap img{height:480px;object-fit:cover;border-radius:4px;}
+  .float-card{
+    position:absolute;left:-16px;bottom:-20px;max-width:230px;
+    background:var(--walnut);color:var(--cream);padding:1.1rem 1.3rem;
+    box-shadow:0 18px 40px rgba(36,24,18,.28);border-radius:3px;
+  }
+  .float-card b{color:#E8B98C;font-family:'Fraunces',serif;font-size:.95rem;display:block;margin-bottom:2px;}
+  .float-card span{font-size:.78rem;color:#D8CDBF;}
+  .stat b{font-family:'Fraunces',serif;font-size:1.6rem;color:var(--copper-deep);display:block;}
+  .stat span{font-size:.78rem;color:var(--text-muted);}
+
+  /* ===== Service cards ===== */
+  .service-card{
+    background:var(--cream);border:1px solid var(--line);padding:2rem 1.75rem;height:100%;border-radius:3px;
+    transition:border-color .2s ease, transform .2s ease;
+  }
+  .service-card:hover{border-color:var(--copper);transform:translateY(-3px);}
+  .service-card .icon{font-size:1.5rem;color:var(--copper);margin-bottom:1rem;}
+
+  /* ===== Portfolio ===== */
+  .project-card{border-radius:4px;overflow:hidden;position:relative;height:100%;}
+  .project-card img{width:100%;height:100%;object-fit:cover;min-height:260px;transition:transform .5s ease;}
+  .project-card:hover img{transform:scale(1.06);}
+  .project-card .overlay{
+    position:absolute;left:0;right:0;bottom:0;padding:1.1rem 1.2rem 1rem;
+    background:linear-gradient(to top, rgba(36,24,18,.9), rgba(36,24,18,0));
+    color:#fff;
+  }
+  .project-card .overlay b{font-family:'Fraunces',serif;font-size:1.02rem;display:block;}
+  .project-card .overlay span{font-size:.78rem;color:#E4D9C8;}
+  .badge-cat{
+    position:absolute;top:14px;left:14px;
+    background:rgba(245,240,230,.92);color:var(--walnut);
+    font-size:.7rem;font-weight:600;padding:.3rem .65rem;border-radius:20px;
+  }
+
+  /* ===== Process ===== */
+  .process-num{font-family:'Fraunces',serif;font-size:2.1rem;color:var(--copper);}
+
+  /* ===== Areas ===== */
+  .area-pill{
+    border:1px solid var(--line);padding:.5rem 1.1rem;font-size:.88rem;border-radius:20px;
+    color:var(--walnut-soft);background:var(--cream);display:inline-block;
+  }
+  .area-pill.on{background:var(--walnut);color:var(--cream);border-color:var(--walnut);}
+
+  /* ===== Testimonials ===== */
+  .testi-card{background:var(--cream);border:1px solid var(--line);padding:1.9rem 1.7rem;border-radius:3px;height:100%;}
+  .testi-card .quote{color:var(--walnut-soft);font-size:.98rem;}
+
+  /* ===== Contact ===== */
+  .contact-form input,.contact-form textarea{
+    background:rgba(245,240,230,.06);border:1px solid rgba(245,240,230,.28);color:var(--cream);
+    border-radius:3px;
+  }
+  .contact-form input::placeholder,.contact-form textarea::placeholder{color:#B7AC9C;}
+  .contact-form input:focus,.contact-form textarea:focus{
+    background:rgba(245,240,230,.1);border-color:var(--copper);color:var(--cream);box-shadow:none;
+  }
+  .contact-info-item{border-bottom:1px solid rgba(245,240,230,.15);padding:1.05rem 0;}
+  .contact-info-item b{display:block;font-size:.95rem;}
+  .contact-info-item span{font-size:.85rem;color:#D8CDBF;}
+
+  /* ===== Developer / Template banner ===== */
+  .dev-banner{
+    background:rgba(168,89,45,.14);
+    border:1px dashed rgba(232,185,140,.55);
+    border-radius:4px;
+  }
+  .dev-banner h5{color:#E8B98C;}
+  .dev-banner .dev-name{font-family:'Fraunces',serif;font-size:1.15rem;color:var(--cream);}
+  .dev-banner .dev-phone{font-size:1.05rem;color:#E8B98C;font-weight:700;}
+
+  footer{background:#1B120D;color:#C9BCA9;}
+  footer h6{color:var(--cream);font-family:'Work Sans',sans-serif;font-weight:600;}
+  footer a{color:#B4A692;text-decoration:none;}
+  footer a:hover{color:#E8B98C;}
+  .footer-logo{font-family:'Fraunces',serif;color:var(--cream);font-size:1.35rem;}
+
+  @media (max-width:767.98px){
+    .hero h1{font-size:2.1rem;}
+    .hero-img-wrap img{height:300px;}
+    .float-card{position:static;margin-top:1rem;max-width:100%;}
+  }
+</style>
+</head>
+<body>
+
+<!-- Template notice -->
+<div class="notice-bar text-center">
+  <div class="container">
+    <strong class="text-copper">Demo / Template Website</strong> — sample site, not a real business. Want this for your own carpentry business? See developer contact in the footer.
+  </div>
+</div>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg sticky-top py-3">
+  <div class="container">
+    <a class="navbar-brand" href="#">Sattar Wood Works<small>KITCHEN &amp; HOME DECORATION CARPENTER — KARACHI</small></a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-4">
+        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="#materials">Materials</a></li>
+        <li class="nav-item"><a class="nav-link" href="#portfolio">Our Work</a></li>
+        <li class="nav-item"><a class="nav-link" href="#process">Process</a></li>
+        <li class="nav-item"><a class="nav-link" href="#areas">Areas</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        <li class="nav-item mt-3 mt-lg-0">
+          <a href="#contact" class="btn btn-copper btn-sm px-3">Get Free Quote</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6">
+        <div class="section-kicker mb-2">Trusted Carpenter Service, All Over Karachi</div>
+        <h1 class="mb-3">Kitchens, cabinets and interiors built by hand for how your home really lives.</h1>
+        <p class="lead">From modular kitchen cabinets and sinks to wardrobes, wall units and full home decoration carpentry — Sattar Wood Works designs and builds it on-site, with solid wood and honest pricing.</p>
+        <div class="d-flex flex-wrap gap-3 my-4">
+          <a href="#contact" class="btn btn-copper btn-lg px-4">Book a Free Site Visit</a>
+          <a href="#portfolio" class="btn btn-outline-walnut btn-lg px-4">View Our Work</a>
+        </div>
+        <div class="d-flex gap-4 border-top pt-3" style="border-color:var(--line)!important;">
+          <div class="stat"><b>12+</b><span>Years of carpentry work</span></div>
+          <div class="stat"><b>480+</b><span>Kitchens &amp; homes completed</span></div>
+          <div class="stat"><b>All Areas</b><span>Service across Karachi</span></div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="hero-img-wrap">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmyBh9hOKyryuk7NJzTvh-dOKjdjONxJZIjrAmhQD_5_kvA1mW5hlYwvo&s=10" alt="Sample modular kitchen with cabinets and sink" class="w-100">
+          <div class="float-card">
+            <b>DHA Phase 6 Kitchen</b>
+            <span>Full modular kitchen — cabinets, granite sink counter &amp; wood paneling (sample project)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section id="services" class="bg-cream2 py-5">
+  <div class="container py-4">
+    <div class="row">
+      <div class="col-lg-6 mb-5">
+        <div class="section-kicker mb-2">What We Build</div>
+        <h2>Carpentry for the whole home</h2>
+        <p class="text-muted-warm">Every piece is measured, designed and fabricated for your space — not off a catalogue shelf.</p>
+      </div>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4">
+        <div class="service-card">
+          <div class="icon"><i class="bi bi-house-gear"></i></div>
+          <h3 class="h5">Modular Kitchen Cabinets</h3>
+          <p class="text-muted-warm mb-0">Custom kitchen units, islands and pantry cabinets in laminate, PVC or solid wood finish.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="service-card">
+          <div class="icon"><i class="bi bi-droplet-half"></i></div>
+          <h3 class="h5">Kitchen Sinks &amp; Counters</h3>
+          <p class="text-muted-warm mb-0">Sink fitting, granite/marble counter tops and matching cabinet units built around them.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="service-card">
+          <div class="icon"><i class="bi bi-door-closed"></i></div>
+          <h3 class="h5">Wardrobes &amp; Dressing Rooms</h3>
+          <p class="text-muted-warm mb-0">Sliding, hinged and walk-in wardrobes built to fit every corner of the bedroom.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="service-card">
+          <div class="icon"><i class="bi bi-tv"></i></div>
+          <h3 class="h5">TV Units &amp; Wall Panelling</h3>
+          <p class="text-muted-warm mb-0">Decorative wall units, false ceiling trims and feature panelling for living and TV lounges.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="service-card">
+          <div class="icon"><i class="bi bi-book"></i></div>
+          <h3 class="h5">Office &amp; Study Furniture</h3>
+          <p class="text-muted-warm mb-0">Study tables, bookshelves and office cabins built for home offices and small businesses.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="service-card">
+          <div class="icon"><i class="bi bi-stars"></i></div>
+          <h3 class="h5">Home Decoration Carpentry</h3>
+          <p class="text-muted-warm mb-0">Decorative niches, shoe racks, crockery units and full-home interior woodwork.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Materials -->
+<section id="materials" class="py-5">
+  <div class="container py-4">
+    <div class="row">
+      <div class="col-lg-6 mb-5">
+        <div class="section-kicker mb-2">Materials We Use</div>
+        <h2>Wood sheets &amp; boards we work with</h2>
+        <p class="text-muted-warm">We only fabricate with branded boards and laminates, so every cabinet and sink counter holds up to daily kitchen use.</p>
+      </div>
+    </div>
+    <div class="row g-4">
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="service-card text-center py-4">
+          <div class="icon"><i class="bi bi-layers"></i></div>
+          <h3 class="h6 mb-1">Patex</h3>
+          <p class="text-muted-warm small mb-0">MDF &amp; particle boards</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="service-card text-center py-4">
+          <div class="icon"><i class="bi bi-layers"></i></div>
+          <h3 class="h6 mb-1">Ghani Board</h3>
+          <p class="text-muted-warm small mb-0">Chipboard &amp; particle board</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="service-card text-center py-4">
+          <div class="icon"><i class="bi bi-layers"></i></div>
+          <h3 class="h6 mb-1">Century Board</h3>
+          <p class="text-muted-warm small mb-0">MDF sheets</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="service-card text-center py-4">
+          <div class="icon"><i class="bi bi-layers"></i></div>
+          <h3 class="h6 mb-1">Diamond Board</h3>
+          <p class="text-muted-warm small mb-0">Particle board</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="service-card text-center py-4">
+          <div class="icon"><i class="bi bi-palette"></i></div>
+          <h3 class="h6 mb-1">Merino Laminate</h3>
+          <p class="text-muted-warm small mb-0">Sunmica / laminate sheets</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="service-card text-center py-4">
+          <div class="icon"><i class="bi bi-palette"></i></div>
+          <h3 class="h6 mb-1">Royal Laminate</h3>
+          <p class="text-muted-warm small mb-0">PVC &amp; laminate finish</p>
+        </div>
+      </div>
+    </div>
+    <p class="text-muted-warm small mt-4 mb-0"><i class="bi bi-info-circle me-1"></i>Board and laminate brand shown here for demonstration — the actual brands used are confirmed with the client before fabrication starts.</p>
+  </div>
+</section>
+
+<!-- Portfolio -->
+<section id="portfolio" class="py-5">
+  <div class="container py-4">
+    <div class="row">
+      <div class="col-lg-6 mb-5">
+        <div class="section-kicker mb-2">Recent Projects</div>
+        <h2>Kitchens, cabinets &amp; sinks we've built</h2>
+        <p class="text-muted-warm">Sample projects shown here for demonstration — every real project on this site would carry the client's actual photos.</p>
+      </div>
+    </div>
+    <div class="row g-3">
+      <div class="col-md-6">
+        <div class="project-card" style="height:420px;">
+          <span class="badge-cat">Modular Kitchen</span>
+          <img src="https://st.hzcdn.com/simgs/ab51d8020de959ab_14-0360/photo.jpg" alt="Modular kitchen with cabinets, sample project">
+          <div class="overlay"><b>Bahadurabad Kitchen Remodel</b><span>Modular kitchen with breakfast counter</span></div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="row g-3 h-100">
+          <div class="col-12" style="height:200px;">
+            <div class="project-card h-100">
+              <span class="badge-cat">Kitchen Sink &amp; Counter</span>
+              <img src="https://i.pinimg.com/236x/9e/7a/04/9e7a04efb45a31c0ccc5dbf3a307d8ca.jpg" alt="Kitchen sink and granite counter, sample project">
+              <div class="overlay"><b>Clifton Sink &amp; Counter Set-up</b><span>Granite counter with steel sink fitting</span></div>
+            </div>
+          </div>
+          <div class="col-12" style="height:200px;">
+            <div class="project-card h-100">
+              <span class="badge-cat">Kitchen Cabinets</span>
+              <img src="https://simpolo-web.s3.ap-south-1.amazonaws.com/uploads/media/blog/Smart-Accessories.jpg" alt="Kitchen cabinets, sample project">
+              <div class="overlay"><b>Gulshan-e-Iqbal Cabinet Set</b><span>Overhead &amp; base cabinets, laminate finish</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="project-card" style="height:280px;">
+          <span class="badge-cat">Wardrobe</span>
+          <img src="https://paktameer.com/wp-content/uploads/2025/05/Pritt94.5Armoire-1407710254.webp" alt="Wardrobe, sample project">
+          <div class="overlay"><b>Clifton Walk-in Wardrobe</b><span>Full dressing room, sliding doors</span></div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="project-card" style="height:280px;">
+          <span class="badge-cat">Kitchen Cabinets</span>
+          <img src="https://www.oppeinhome.com/upload/images/ueditor/20230912/top-kitchen-design-ideas-that-inspire-you-7.webp" alt="L shaped kitchen cabinets with sink, sample project">
+          <div class="overlay"><b>Nazimabad Kitchen</b><span>L-shaped cabinets with sink unit, wood finish</span></div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="project-card" style="height:280px;">
+          <span class="badge-cat">Doors</span>
+          <img src="https://m.media-amazon.com/images/I/51ZJ3IikdfL._AC_UF350,350_QL80_.jpg" alt="Wooden doors, sample project">
+          <div class="overlay"><b>North Nazimabad Doors</b><span>Solid wood doors &amp; frames</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Process -->
+<section id="process" class="bg-cream2 py-5">
+  <div class="container py-4">
+    <div class="row">
+      <div class="col-lg-6 mb-5">
+        <div class="section-kicker mb-2">How It Works</div>
+        <h2>From site visit to installation</h2>
+        <p class="text-muted-warm">Four steps, start to finish — most kitchens and wardrobes are completed within 10 to 18 working days.</p>
+      </div>
+    </div>
+    <div class="row g-4">
+      <div class="col-6 col-lg-3">
+        <div class="process-num mb-2">1</div>
+        <h4 class="h6">Free Site Visit</h4>
+        <p class="text-muted-warm small mb-0">Our carpenter visits your home anywhere in Karachi to take measurements.</p>
+      </div>
+      <div class="col-6 col-lg-3">
+        <div class="process-num mb-2">2</div>
+        <h4 class="h6">Design &amp; Quote</h4>
+        <p class="text-muted-warm small mb-0">We share a layout, material options and a clear price quote.</p>
+      </div>
+      <div class="col-6 col-lg-3">
+        <div class="process-num mb-2">3</div>
+        <h4 class="h6">Fabrication</h4>
+        <p class="text-muted-warm small mb-0">Cabinets, sinks and units are built at our workshop to exact size.</p>
+      </div>
+      <div class="col-6 col-lg-3">
+        <div class="process-num mb-2">4</div>
+        <h4 class="h6">Installation</h4>
+        <p class="text-muted-warm small mb-0">Our team installs and fits everything on-site, finished and ready.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Areas -->
+<section id="areas" class="py-5">
+  <div class="container py-4">
+    <div class="row">
+      <div class="col-lg-6 mb-4">
+        <div class="section-kicker mb-2">Service Coverage</div>
+        <h2>Available all over Karachi</h2>
+        <p class="text-muted-warm">Site visits and installation across every major area of the city.</p>
+      </div>
+    </div>
+    <div class="d-flex flex-wrap gap-2">
+      <span class="area-pill on">DHA</span>
+      <span class="area-pill on">Clifton</span>
+      <span class="area-pill">Gulshan-e-Iqbal</span>
+      <span class="area-pill">PECHS</span>
+      <span class="area-pill">Bahadurabad</span>
+      <span class="area-pill">Nazimabad</span>
+      <span class="area-pill">North Nazimabad</span>
+      <span class="area-pill">Gulistan-e-Johar</span>
+      <span class="area-pill">Malir</span>
+      <span class="area-pill">Korangi</span>
+      <span class="area-pill">Shah Faisal Colony</span>
+      <span class="area-pill">Federal B Area</span>
+      <span class="area-pill">Saddar</span>
+      <span class="area-pill">Landhi</span>
+      <span class="area-pill">Scheme 33</span>
+      <span class="area-pill">&amp; all surrounding areas</span>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="bg-cream2 py-5">
+  <div class="container py-4">
+    <div class="row">
+      <div class="col-lg-6 mb-5">
+        <div class="section-kicker mb-2">Client Feedback</div>
+        <h2>What homeowners say</h2>
+      </div>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="testi-card">
+          <p class="quote">"Kitchen ka kaam time pe complete hua aur finishing bohot achi thi. Cabinets aur sink abhi bhi bilkul theek chal rahe hain."</p>
+          <b>Ahmed Raza</b><br><span class="text-muted-warm small">DHA Phase 5, Karachi (sample review)</span>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="testi-card">
+          <p class="quote">"We got our wardrobes and kitchen cabinets done together. The team was punctual and the price matched the quote exactly."</p>
+          <b>Sana Khan</b><br><span class="text-muted-warm small">Gulshan-e-Iqbal, Karachi (sample review)</span>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="testi-card">
+          <p class="quote">"Bohot professional service thi, ghar par visit karke measurement li aur sink counter ka design pehle dikhaya. Recommended."</p>
+          <b>Bilal Siddiqui</b><br><span class="text-muted-warm small">Nazimabad, Karachi (sample review)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="bg-walnut text-cream py-5" style="color:var(--cream);">
+  <div class="container py-4">
+    <div class="row">
+      <div class="col-lg-6 mb-5">
+        <div class="section-kicker mb-2" style="color:#E8B98C;">Get In Touch</div>
+        <h2 style="color:var(--cream);">Tell us about your kitchen or home project</h2>
+        <p style="color:#D8CDBF;">Share your area and requirement — we'll arrange a free site visit anywhere in Karachi.</p>
+      </div>
+    </div>
+    <div class="row g-5">
+      <div class="col-lg-6">
+        <div class="contact-info-item d-flex gap-3">
+          <i class="bi bi-telephone-fill fs-5 text-copper"></i>
+          <div><b>Call / WhatsApp</b><span>0300 1234567 (sample business number)</span></div>
+        </div>
+        <div class="contact-info-item d-flex gap-3">
+          <i class="bi bi-geo-alt-fill fs-5 text-copper"></i>
+          <div><b>Workshop Address</b><span>Sample Address, Karachi, Pakistan</span></div>
+        </div>
+        <div class="contact-info-item d-flex gap-3">
+          <i class="bi bi-clock-fill fs-5 text-copper"></i>
+          <div><b>Working Hours</b><span>Monday – Saturday, 10:00 AM – 8:00 PM</span></div>
+        </div>
+        <div class="contact-info-item d-flex gap-3">
+          <i class="bi bi-signpost-2-fill fs-5 text-copper"></i>
+          <div><b>Service Area</b><span>All over Karachi — free site visit included</span></div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <form class="contact-form d-flex flex-column gap-3" onsubmit="event.preventDefault(); alert('This is a demo form on a template website — no request has actually been sent.');">
+          <input type="text" class="form-control py-2" placeholder="Your Name" required>
+          <input type="tel" class="form-control py-2" placeholder="Phone Number" required>
+          <input type="text" class="form-control py-2" placeholder="Area, Karachi" required>
+          <textarea class="form-control" rows="4" placeholder="Tell us about your kitchen / carpentry project"></textarea>
+          <button type="submit" class="btn btn-copper py-2 fw-semibold">Request Free Site Visit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="pt-5">
+  <div class="container">
+    <div class="row gy-5 pb-4 border-bottom" style="border-color:rgba(245,240,230,.1)!important;">
+      <div class="col-lg-5">
+        <div class="footer-logo mb-2">Sattar Wood Works</div>
+        <p class="small">A sample kitchen &amp; home decoration carpentry business, built to demonstrate this website template. All content, images and reviews on this page are placeholders.</p>
+      </div>
+      <div class="col-6 col-lg-3">
+        <h6 class="mb-3">Quick Links</h6>
+        <ul class="list-unstyled small d-flex flex-column gap-2">
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Our Work</a></li>
+          <li><a href="#process">Process</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-lg-4">
+        <h6 class="mb-3">Services</h6>
+        <ul class="list-unstyled small d-flex flex-column gap-2">
+          <li>Modular Kitchens &amp; Sinks</li>
+          <li>Wardrobes &amp; Dressing Rooms</li>
+          <li>Wall Units &amp; Panelling</li>
+          <li>Doors &amp; Windows</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Developer / purchase banner -->
+    <div class="dev-banner p-4 my-4 d-flex flex-wrap justify-content-between align-items-center gap-3">
+      <div style="max-width:560px;">
+        <h5 class="h6 mb-1">This is a template website</h5>
+        <p class="small mb-0" style="color:#D8CDBF;">Built as a demo for a Home Kitchen &amp; Decoration Carpenter business in Karachi. To purchase this website for your own carpentry business, contact the developer.</p>
+      </div>
+      <div class="text-lg-end">
+        <div class="dev-name"><i class="bi bi-code-slash text-copper me-1"></i> Jiskani Solutions</div>
+        <div class="small" style="color:#D8CDBF;">Developer: Muhammad Asim Raza</div>
+        <div class="dev-phone"><i class="bi bi-whatsapp"></i> 0304 1291775</div>
+      </div>
+    </div>
+
+    <div class="d-flex flex-wrap justify-content-between small py-3" style="color:#8C7C68;">
+      <span>© 2026 Sattar Wood Works — Demo Template</span>
+      <span>Developed by Jiskani Solutions — Muhammad Asim Raza — 0304 1291775</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
